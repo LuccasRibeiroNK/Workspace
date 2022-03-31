@@ -5,16 +5,43 @@ app.get('/', (req, res) => {
     res.send('Bem vindo!');
 });
 
-app.get('/blog', (req, res) => {
+app.get('/blog/:artigo?', (req, res) => {
+    const artigo = req.params.artigo;
+    if (artigo) {
+        res.send(`Bem vindo ao blog do artigo ${artigo}`);
+    } else {
+        res.send('Bem vindo ao blog');
+    }
     res.send('Bem vindo ao meu Blog');
+
 });
 
 app.get('/canal', (req, res) => {
-    res.send('Bem vindo ao meu Canal');
+    res.send('Bem vindo ao meu Canal!');
 })
 
 app.get("/canal/youtube", (req, res) => {
-    res.send("Bem vindo ao canal do Youtube");
+    let canal = req.query['canal'];
+    if (canal) {
+        res.send(`Bem vindo ao canal ${canal}`);
+    } else {
+        res.send('Bem vindo ao canal');
+    }
+
+});
+
+app.get("/ola/:nome?/:empresa?", (req, res) => {
+    let nome = req.params.nome;
+    let empresa = req.params.empresa;
+    if (!nome) {
+        res.send("<h1>Seu nome não foi informado!</h1>");
+    } else {
+        if (empresa) {
+            res.send(`<h1>Olá ${nome}, da empresa ${empresa}</h1>`);
+        } else {
+            res.send(`<h1>Olá ${nome}</h1>`);
+        }
+    }
 });
 
 app.listen(4000, function (erro) {
