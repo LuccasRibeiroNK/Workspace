@@ -1,25 +1,24 @@
-import firebase from 'firebase/app';
+// import firebase from 'firebase/app';
 import 'firebase/auth';
 import { initializeApp } from 'firebase/app';
-import { getAuth } from '../contexts/AuthContext';
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
 
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    apiKey: "AIzaSyD9LhOkMOGBBYIjO9uTI7ngy8qrsooDAjU",
 
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    authDomain: "colegio-a6a2a.firebaseapp.com",
 
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    projectId: "colegio-a6a2a",
 
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    storageBucket: "colegio-a6a2a.appspot.com",
 
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    messagingSenderId: "575672051670",
 
-    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    appId: "1:575672051670:web:4e8de523107bd84470e677",
 
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
-
+    measurementId: "G-FJE87GF07T"
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app); 
+export const auth = getAuth(app);
