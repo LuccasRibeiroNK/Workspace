@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_section_metadata",
+  "info": {
+    "name": "section_metadata",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "section_id": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "maxLength": 50,
+      "minLength": 4,
+      "regex": "^[a-zA-Z]+([0-9-]*[a-zA-Z]+)*$"
+    },
+    "background": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
